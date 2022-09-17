@@ -1,3 +1,9 @@
-<strong><%= @article.title%></strong>
-<p><%= @article.content%></p>
+<%# Using the partial _article view below to dry out code %>
+<%= render "article", article: @article %>
 <%= link_to "HomePage", root_path %>
+
+<%# Using the partial _form view in the "comments" directory below to dry out code %>
+<%= render "comments/form" %>
+
+<h2> Comments </h2>
+<%= render @article.comments%>

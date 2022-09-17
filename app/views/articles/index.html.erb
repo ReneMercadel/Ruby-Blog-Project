@@ -1,9 +1,18 @@
 <h1> This is our index page </h1>
 <ul>
+<%# the @ in front of article/articles refers to actual instances as opposed to the article model %>
   <% @articles.each do |article| %>
+    <%# Using the partial _article view below to dry out code %>
+    <%= render "article", article: article %>
 
-    <strong> <%= article.title%> </strong>
-    <p> <%= article.content%> </p>
-  <%= link_to "Show", article_path(article.id)%>
+    <%# using resources in the routes file lets me replace the next line with the one after Same deal with the delete button element %>
+    <%# <%= link_to "Show", article_path(article.id)%>  
+    <%= link_to "Show", article %> 
+    
+    <%# Using the partial _article view also replaces delete button/form below %>
+        <%# "button_to" creates form around button %>
+        <%# <%= button_to "Delete", article, method: :delete %> 
+
   <% end %>
 </ul>
+<%= link_to "New", new_article_path %>

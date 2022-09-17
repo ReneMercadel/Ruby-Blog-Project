@@ -1,0 +1,5 @@
+<%# Using this partial file to dry out code in index file. Reminds me of the base classes/models that are only supposed to function as a template for other classes/models %>
+<strong> <%= article.title%> </strong>
+<p> <%= article.content%> </p>
+<%= link_to "Edit", edit_article_path(article) %>
+<%= button_to "Delete", article, method: :delete %>
